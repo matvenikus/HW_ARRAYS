@@ -1,46 +1,51 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public double averageNumbers(long[] numbers) {
-        double sum = 0;
 
-        for (int i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
+    public double sum(long[] sales) {
+        double sum = 0;
+        for (int i = 0; i < sales.length; i++) {
+            sum += sales[i];
         }
 
-        return sum / numbers.length;
+        return sum / sales.length;
     }
 
-    public double overAverage(long[] days) {
+    public double averageNumbers(long[] sales) {
+        double sum = sum(sales);
+            return sum;
+    }
+
+    public double belowAverage(long[] sales) {
         double sum = 0;
         double average = 0;
         int count = 0;
 
-        for (int i = 0; i < days.length; i++) {
-            sum = sum + days[i];
+        for (int i = 0; i < sales.length; i++) {
+            sum = sum + sales[i];
         }
-        average = sum / days.length;
+        average = sum / sales.length;
 
-        for (int i = 0; i < days.length; i++) {
-            if (days[i] > average) {
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] < average) {
                 count++;
             }
         }
         return count;
     }
 
-    public double belowAverage(long[] days) {
+    public double overAverage(long[] sales) {
         double sum = 0;
         double average = 0;
         int count = 0;
 
-        for (int i = 0; i < days.length; i++) {
-            sum = sum + days[i];
+        for (int i = 0; i < sales.length; i++) {
+            sum = sum + sales[i];
         }
-        average = sum / days.length;
+        average = sum / sales.length;
 
-        for (int i = 0; i < days.length; i++) {
-            if (days[i] < average) {
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > average) {
                 count++;
             }
         }
