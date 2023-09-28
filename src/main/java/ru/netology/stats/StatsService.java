@@ -2,7 +2,7 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public double sumTotal(long[] sales) {
+    public double averageNumber(long[] sales) {
         double sum = 0;
         for (int i = 0; i < sales.length; i++) {
             sum += sales[i];
@@ -13,12 +13,12 @@ public class StatsService {
 
 
     public double averageNumbers(long[] sales) {
-        double sum = sumTotal(sales);
-        return sum;
+        double average = averageNumber(sales);
+        return average;
     }
 
     public double belowAverage(long[] sales) {
-        double average = sumTotal(sales);
+        double average = averageNumber(sales);
         int count = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -30,7 +30,7 @@ public class StatsService {
     }
 
     public double overAverage(long[] sales) {
-        double average = sumTotal(sales);
+        double average = averageNumber(sales);
         int count = 0;
 
         for (int i = 0; i < sales.length; i++) {
